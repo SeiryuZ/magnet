@@ -37,6 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Our apps
+    'magnet.apps.users',
+
+    # 3rd Party apps
+    'django_extensions',
 ]
 
 MIDDLEWARE = [

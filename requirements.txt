@@ -1,0 +1,9 @@
+# Essentials
+django==1.10.5
+
+django-extensions==1.7.5
+
+
+# Dev Utilities
+bpython==0.16
+werkzeug==0.11.15
