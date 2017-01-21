@@ -18,24 +18,18 @@ class User(AbstractBaseUser):
     class Gender(Enum):
         MALE = 1
         FEMALE = 2
-    gender = models.SmallIntegerField(choices=
-        ((g.value, g.name.title()) for g in Gender)
-    )
+    gender = models.SmallIntegerField(choices=((g.value, g.name.title()) for g in Gender))
 
     @unique
     class Type(Enum):
         VOLUNTEER = 1
         INITIATOR = 2
-    type = moderls.SmallIntegerField(choices=
-        ((t.value, t.name.title()) for t in Type)
-    )
+    type = models.SmallIntegerField(choices=((t.value, t.name.title()) for t in Type))
 
     is_active = models.BooleanField(default=False)
 
-
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['email', 'nane', 'mobile_number', 'gender']
-
 
     def get_full_name(self):
         return self.name
@@ -46,5 +40,3 @@ class User(AbstractBaseUser):
     @property
     def first_name(self):
         return self.name.split(" ")[0]
-
-
