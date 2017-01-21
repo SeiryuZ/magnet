@@ -1,7 +1,38 @@
 from enum import Enum, unique
 
-from django.contrib.auth.base_user import AbstractBaseUser
+from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
 from django.db import models
+
+
+class UserManager(BaseUserManager):
+
+    def create_user(self, email: str, name: str, mobile_number: str,
+                    whatsapp_number: str, pk_number: int,
+                    previous_university: str=None, password: str=None):
+
+        if not email or not name or not mobile_number or whastapp_number or pk_number:
+            raise ValueError("Users must have required fields")
+
+        user = self.model(
+            email=email, name=name, mobile_number=mobile_number, whatsapp_number=whatsapp_number,
+            pk_number=pk_number, previous_university=previous_university
+        )
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+
+    def create_superuser(self, email: str, name: str, mobile_number: str,
+                         whatsapp_number: str, pk_number: int,
+                         previous_university: str, password: str):
+        user = self.model(
+            email=email, name=name, mobile_number=mobile_number, whatsapp_number=whatsapp_number,
+            pk_number=pk_number, previous_university=previous_university
+        )
+        user.set_password(password)
+        user.is_active = True
+        user.is_admin = True
+        user.save(using=self._db)
+        return user
 
 
 class User(AbstractBaseUser):
@@ -27,9 +58,11 @@ class User(AbstractBaseUser):
     type = models.SmallIntegerField(choices=((t.value, t.name.title()) for t in Type))
 
     is_active = models.BooleanField(default=False)
+    is_admin = models.BooleanField(default=False)
+    objects = UserManager()
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['email', 'nane', 'mobile_number', 'gender']
+    REQUIRED_FIELDS = ['name', 'mobile_number', 'gender']
 
     def get_full_name(self):
         return self.name
