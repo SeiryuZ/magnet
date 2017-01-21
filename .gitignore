@@ -1,3 +1,7 @@
+# Do not save root static folders ( This is where collectstatic will collect all the files )
+/static/
+
+
 # Created by https://www.gitignore.io/api/django,python,linux,osx,macos,vim
 
 ### Django ###

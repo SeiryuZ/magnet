@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Mata garuda network</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      {% block main_content %}
+
+      {% endblock %}
+    </div>
+  </body>
+  <script src="{% static 'js/main.js' %}"></script>
+</html>
