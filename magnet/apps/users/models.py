@@ -7,7 +7,7 @@ from django.db import models
 class UserManager(BaseUserManager):
 
     def create_user(self, email: str, name: str, mobile_number: str,
-                    whatsapp_number: str, pk_number: int,
+                    whatsapp_number: str, pk_number: int, gender: int,
                     previous_university: str=None, password: str=None):
 
         if not email or not name or not mobile_number or whastapp_number or pk_number:
@@ -15,18 +15,18 @@ class UserManager(BaseUserManager):
 
         user = self.model(
             email=email, name=name, mobile_number=mobile_number, whatsapp_number=whatsapp_number,
-            pk_number=pk_number, previous_university=previous_university
+            pk_number=pk_number, previous_university=previous_university, gender=gender
         )
         user.set_password(password)
         user.save(using=self._db)
         return user
 
     def create_superuser(self, email: str, name: str, mobile_number: str,
-                         whatsapp_number: str, pk_number: int,
-                         previous_university: str, password: str):
+                         whatsapp_number: str, pk_number: int, gender: int,
+                         password: str, previous_university: str = None):
         user = self.model(
             email=email, name=name, mobile_number=mobile_number, whatsapp_number=whatsapp_number,
-            pk_number=pk_number, previous_university=previous_university
+            pk_number=pk_number, previous_university=previous_university, gender=gender
         )
         user.set_password(password)
         user.is_active = True
@@ -55,14 +55,14 @@ class User(AbstractBaseUser):
     class Type(Enum):
         VOLUNTEER = 1
         INITIATOR = 2
-    type = models.SmallIntegerField(choices=((t.value, t.name.title()) for t in Type))
+    type = models.SmallIntegerField(choices=((t.value, t.name.title()) for t in Type), default=1)
 
     is_active = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False)
     objects = UserManager()
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['name', 'mobile_number', 'gender']
+    REQUIRED_FIELDS = ['name', 'gender', 'mobile_number', 'whatsapp_number', 'pk_number']
 
     def get_full_name(self):
         return self.name
@@ -73,3 +73,14 @@ class User(AbstractBaseUser):
     @property
     def first_name(self):
         return self.name.split(" ")[0]
+
+    # These 3 method is used for django admin
+    @property
+    def is_staff(self):
+        return self.is_admin
+
+    def has_perm(self, perm, obj=None):
+        return self.is_admin
+
+    def has_module_perms(self, app_label):
+        return self.is_admin
