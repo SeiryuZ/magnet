@@ -125,4 +125,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'magnet', 'static')]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'magnet', 'static'),
+    os.path.join(BASE_DIR, 'node_modules'),  # packages installed by yarn
+]

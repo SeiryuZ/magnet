@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "bootstrap": "4.0.0-alpha.6",
+    "jquery": "^3.1.1",
+    "tether": "^1.4.0"
+  }
+}

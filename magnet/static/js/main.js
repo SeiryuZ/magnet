@@ -1,1 +1,1 @@
-console.alert("Welcome to magnet website");
+console.log("Welcome to magnet website");
