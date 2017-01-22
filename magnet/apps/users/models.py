@@ -59,14 +59,14 @@ class User(AbstractBaseUser):
     previous_university = models.CharField(_("Previous university"), max_length=255, blank=True, null=True)
 
     gender = models.SmallIntegerField(
-        _("Gender"), choices=((Gender.MALE, _("Male")), (Gender.FEMALE, _("Female")))
+        _("Gender"), choices=((Gender.MALE.value, _("Male")), (Gender.FEMALE.value, _("Female")))
     )
 
     type = models.SmallIntegerField(
         _("User type"),
         choices=(
-            (UserType.VOLUNTEER, _("Volunteer")),
-            (UserType.INITIATOR, _("Initiator")),
+            (UserType.VOLUNTEER.value, _("Volunteer")),
+            (UserType.INITIATOR.value, _("Initiator")),
         ),
         default=UserType.VOLUNTEER
     )

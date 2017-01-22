@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-22 08:20+0000\n"
+"POT-Creation-Date: 2017-01-22 09:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,47 +18,75 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: magnet/apps/users/models.py:47
+#: magnet/apps/users/models.py:53
 msgid "Name"
 msgstr "Nama"
 
-#: magnet/apps/users/models.py:48
+#: magnet/apps/users/models.py:54
 msgid "Mobile number"
 msgstr "Nomor handphone"
 
-#: magnet/apps/users/models.py:49
+#: magnet/apps/users/models.py:55
 msgid "ex: +6281xxxxxxx"
 msgstr "Contoh: +6281xxxxxxx"
 
-#: magnet/apps/users/models.py:50
+#: magnet/apps/users/models.py:56
 msgid "Whatsapp number"
 msgstr "Nomor whatsapp"
 
-#: magnet/apps/users/models.py:51
+#: magnet/apps/users/models.py:57
 #, fuzzy
 #| msgid "ex: +6281xxxxxxx"
 msgid "ex: +6281xxxxxx"
 msgstr "Contoh: +6281xxxxxxx"
 
-#: magnet/apps/users/models.py:52
+#: magnet/apps/users/models.py:58
 msgid "PK number"
 msgstr "PK batch"
 
-#: magnet/apps/users/models.py:53
+#: magnet/apps/users/models.py:59
 msgid "Previous university"
 msgstr "Universitas terakhir"
 
-#: magnet/apps/users/models.py:56
+#: magnet/apps/users/models.py:62
 msgid "Gender"
 msgstr "Jenis kelamin"
 
-#: magnet/apps/users/models.py:56
+#: magnet/apps/users/models.py:62
 msgid "Male"
 msgstr "Laki-Laki"
 
-#: magnet/apps/users/models.py:56
+#: magnet/apps/users/models.py:62
 msgid "Female"
 msgstr "Perempuan"
+
+#: magnet/apps/users/models.py:66
+msgid "User type"
+msgstr ""
+
+#: magnet/apps/users/models.py:68
+msgid "Volunteer"
+msgstr ""
+
+#: magnet/apps/users/models.py:69
+msgid "Initiator"
+msgstr ""
+
+#: magnet/public/forms.py:8
+msgid "Email or Mobile"
+msgstr "Email atau Telepon"
+
+#: magnet/public/forms.py:11
+msgid "Password"
+msgstr "Sandi"
+
+#: magnet/public/forms.py:15
+msgid "Wrong username or password."
+msgstr "Username atau password salah."
+
+#: magnet/public/forms.py:17
+msgid "This account is inactive. Please contact us for assistance."
+msgstr "Akun ini belum aktif. Hubungi kami untuk bantuan."
 
 #: magnet/settings.py:122
 msgid "Indonesian"

@@ -1,8 +1,17 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block main_content %}
 
+
 <div class="row center login-boxes">
+  <div class="col">
+        <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button>Login</button>
+        </form>
+  </div>
   <div class="col">
     Volunteer?
     Klik <a href="{% url 'register' %}">disini</a>

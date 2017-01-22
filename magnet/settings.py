@@ -148,8 +148,7 @@ STATICFILES_DIRS = [
 
 # Auth with mobile phone
 AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',
-    'magnet.apps.users.backends.MobileNumberBackend',
+    'magnet.apps.users.backends.MagnetBackend',
 ]
 
 # Translation files
