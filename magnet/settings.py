@@ -133,3 +133,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'magnet', 'static'),
     os.path.join(BASE_DIR, 'node_modules'),  # packages installed by yarn
 ]
+
+try:
+    from .local_settings import *
+except:
+    pass
