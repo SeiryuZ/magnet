@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-22 07:42+0000\n"
+"POT-Creation-Date: 2017-01-22 08:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,34 +18,52 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: magnet/apps/users/models.py:41
+#: magnet/apps/users/models.py:47
 msgid "Name"
 msgstr "Nama"
 
-#: magnet/apps/users/models.py:42
+#: magnet/apps/users/models.py:48
 msgid "Mobile number"
 msgstr "Nomor handphone"
 
-#: magnet/apps/users/models.py:43
+#: magnet/apps/users/models.py:49
 msgid "ex: +6281xxxxxxx"
 msgstr "Contoh: +6281xxxxxxx"
 
-#: magnet/apps/users/models.py:44
+#: magnet/apps/users/models.py:50
 msgid "Whatsapp number"
 msgstr "Nomor whatsapp"
 
-#: magnet/apps/users/models.py:46
+#: magnet/apps/users/models.py:51
+#, fuzzy
+#| msgid "ex: +6281xxxxxxx"
+msgid "ex: +6281xxxxxx"
+msgstr "Contoh: +6281xxxxxxx"
+
+#: magnet/apps/users/models.py:52
 msgid "PK number"
 msgstr "PK batch"
 
-#: magnet/apps/users/models.py:47
+#: magnet/apps/users/models.py:53
 msgid "Previous university"
 msgstr "Universitas terakhir"
 
-#: magnet/settings.py:118
+#: magnet/apps/users/models.py:56
+msgid "Gender"
+msgstr "Jenis kelamin"
+
+#: magnet/apps/users/models.py:56
+msgid "Male"
+msgstr "Laki-Laki"
+
+#: magnet/apps/users/models.py:56
+msgid "Female"
+msgstr "Perempuan"
+
+#: magnet/settings.py:122
 msgid "Indonesian"
 msgstr "Bahasa Indonesia"
 
-#: magnet/settings.py:119
+#: magnet/settings.py:123
 msgid "English"
 msgstr "Bahasa Inggris"

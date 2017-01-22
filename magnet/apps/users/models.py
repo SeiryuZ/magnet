@@ -5,6 +5,18 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 
+@unique
+class Gender(Enum):
+    MALE = 1
+    FEMALE = 2
+
+
+@unique
+class UserType(Enum):
+    VOLUNTEER = 1
+    INITIATOR = 2
+
+
 class UserManager(BaseUserManager):
 
     def create_user(self, email: str, name: str, mobile_number: str,
@@ -42,21 +54,22 @@ class User(AbstractBaseUser):
     mobile_number = models.CharField(_("Mobile number"), max_length=255, unique=True,
                                      help_text=_("ex: +6281xxxxxxx"))
     whatsapp_number = models.CharField(_("Whatsapp number"), max_length=255, unique=True,
-                                       help_text="ex: +6281xxxxxx")
+                                       help_text=_("ex: +6281xxxxxx"))
     pk_number = models.PositiveSmallIntegerField(_("PK number"))
     previous_university = models.CharField(_("Previous university"), max_length=255, blank=True, null=True)
 
-    @unique
-    class Gender(Enum):
-        MALE = 1
-        FEMALE = 2
-    gender = models.SmallIntegerField(choices=((g.value, g.name.title()) for g in Gender))
+    gender = models.SmallIntegerField(
+        _("Gender"), choices=((Gender.MALE, _("Male")), (Gender.FEMALE, _("Female")))
+    )
 
-    @unique
-    class Type(Enum):
-        VOLUNTEER = 1
-        INITIATOR = 2
-    type = models.SmallIntegerField(choices=((t.value, t.name.title()) for t in Type), default=1)
+    type = models.SmallIntegerField(
+        _("User type"),
+        choices=(
+            (UserType.VOLUNTEER, _("Volunteer")),
+            (UserType.INITIATOR, _("Initiator")),
+        ),
+        default=UserType.VOLUNTEER
+    )
 
     is_active = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False)
