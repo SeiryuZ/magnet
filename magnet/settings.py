@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'magnet.apps.users',
 
     # 3rd Party apps
+    'crispy_forms',
     'django_extensions',
 ]
 
@@ -133,6 +134,10 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'magnet', 'static'),
     os.path.join(BASE_DIR, 'node_modules'),  # packages installed by yarn
 ]
+
+# Crispy form template pack
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 try:
     from .local_settings import *

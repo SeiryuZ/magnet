@@ -2,6 +2,7 @@
 django==1.10.5
 
 django-extensions==1.7.5
+django-crispy-forms==1.6.0
 
 
 # Dev Utilities

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block main_content %}
+<div class="col">
+    <h1>Form</h1>
+    {% crispy form form.helper %}
+
+</div>
+
+{% endblock %}
