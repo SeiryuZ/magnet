@@ -1,0 +1,51 @@
+# Mata Garuda Network 
+# Copyright (C) 2017
+# This file is distributed under the same license as the PACKAGE package.
+# Steven <stvn.bu [at] gmail.com>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-01-22 07:42+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: magnet/apps/users/models.py:41
+msgid "Name"
+msgstr "Nama"
+
+#: magnet/apps/users/models.py:42
+msgid "Mobile number"
+msgstr "Nomor handphone"
+
+#: magnet/apps/users/models.py:43
+msgid "ex: +6281xxxxxxx"
+msgstr "Contoh: +6281xxxxxxx"
+
+#: magnet/apps/users/models.py:44
+msgid "Whatsapp number"
+msgstr "Nomor whatsapp"
+
+#: magnet/apps/users/models.py:46
+msgid "PK number"
+msgstr "PK batch"
+
+#: magnet/apps/users/models.py:47
+msgid "Previous university"
+msgstr "Universitas terakhir"
+
+#: magnet/settings.py:118
+msgid "Indonesian"
+msgstr "Bahasa Indonesia"
+
+#: magnet/settings.py:119
+msgid "English"
+msgstr "Bahasa Inggris"

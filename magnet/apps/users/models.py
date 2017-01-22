@@ -2,6 +2,7 @@ from enum import Enum, unique
 
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
 from django.db import models
+from django.utils.translation import ugettext_lazy as _
 
 
 class UserManager(BaseUserManager):
@@ -36,14 +37,14 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser):
-    email = models.CharField(max_length=40, unique=True)
-    name = models.CharField(max_length=255)
-    mobile_number = models.CharField(max_length=255, unique=True,
-                                     help_text="ex: +6281xxxxxxx")
-    whatsapp_number = models.CharField(max_length=255, unique=True,
+    email = models.EmailField(max_length=40, unique=True)
+    name = models.CharField(_("Name"), max_length=255)
+    mobile_number = models.CharField(_("Mobile number"), max_length=255, unique=True,
+                                     help_text=_("ex: +6281xxxxxxx"))
+    whatsapp_number = models.CharField(_("Whatsapp number"), max_length=255, unique=True,
                                        help_text="ex: +6281xxxxxx")
-    pk_number = models.PositiveSmallIntegerField()
-    previous_university = models.CharField(max_length=255, blank=True, null=True)
+    pk_number = models.PositiveSmallIntegerField(_("PK number"))
+    previous_university = models.CharField(_("Previous university"), max_length=255, blank=True, null=True)
 
     @unique
     class Gender(Enum):

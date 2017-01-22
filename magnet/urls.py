@@ -19,6 +19,7 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^$', TemplateView.as_view(template_name='index.html'), name='index'),
     url(r'^', include('magnet.public.urls')),
 ]
