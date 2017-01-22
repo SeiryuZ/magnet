@@ -1,9 +1,12 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
+{% load i18n %}.
 
 
 {% block main_content %}
 <div class="col">
+    {% get_current_language as LANGUAGE_CODE %}
+    {{  LANGUAGE_CODE }}
     <h1>Form</h1>
     {% crispy form form.helper %}
 
