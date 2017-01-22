@@ -135,6 +135,12 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'node_modules'),  # packages installed by yarn
 ]
 
+# Auth with mobile phone
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'magnet.apps.users.backends.MobileNumberBackend',
+]
+
 # Crispy form template pack
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
