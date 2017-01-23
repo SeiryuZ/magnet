@@ -1,7 +1,7 @@
-from django import forms
-
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
+from django import forms
+from django.utils.translation import ugettext_lazy as _
 
 from .models import User
 
@@ -43,11 +43,12 @@ class UserCreationForm(forms.ModelForm):
 
 
 class UserChangeForm(forms.ModelForm):
+    same_number = forms.BooleanField(label=_("Copy number for whatsapp"))
 
     class Meta:
         model = User
-        fields = ('email', 'gender', 'mobile_number', 'whatsapp_number', 'pk_number',
-                  'previous_university', 'type')
+        fields = ('email', 'gender', 'mobile_number', 'same_number',
+                  'whatsapp_number', 'pk_number', 'previous_university', 'type')
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

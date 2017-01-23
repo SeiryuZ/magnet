@@ -1,5 +1,5 @@
 from django.contrib import messages
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.utils.translation import ugettext_lazy as _
@@ -47,6 +47,13 @@ class LoginView(BaseFormView):
             else:
                 return redirect('profile')
         return render(request, self.template_name, {'form': form})
+
+
+class LogoutView(View):
+
+    def get(self, request, *args, **kwargs):
+        logout(request)
+        return redirect('login')
 
 
 @method_decorator(login_required, name='dispatch')
