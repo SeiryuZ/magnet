@@ -11,11 +11,12 @@ class UserCreationForm(forms.ModelForm):
     fields, plus a repeated password."""
     password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Password confirmation', widget=forms.PasswordInput)
+    same_number = forms.BooleanField(label=_("Copy number for whatsapp"))
 
     class Meta:
         model = User
-        fields = ('email', 'gender', 'mobile_number', 'whatsapp_number', 'pk_number',
-                  'previous_university', 'type')
+        fields = ('email', 'gender', 'mobile_number', 'same_number',
+                  'whatsapp_number', 'pk_number', 'previous_university', 'type')
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
