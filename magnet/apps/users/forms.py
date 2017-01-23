@@ -1,5 +1,4 @@
 from django import forms
-from django.contrib.auth.forms import ReadOnlyPasswordHashField
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
@@ -44,19 +43,16 @@ class UserCreationForm(forms.ModelForm):
 
 
 class UserChangeForm(forms.ModelForm):
-    """A form for updating users. Includes all the fields on
-    the user, but replaces the password field with admin's
-    password hash display field.
-    """
-    password = ReadOnlyPasswordHashField()
 
     class Meta:
         model = User
         fields = ('email', 'gender', 'mobile_number', 'whatsapp_number', 'pk_number',
-                  'previous_university', 'type', 'is_active', 'is_admin')
+                  'previous_university', 'type')
 
-    def clean_password(self):
-        # Regardless of what the user provides, return the initial value.
-        # This is done here, rather than on the field, because the
-        # field does not have access to the initial value
-        return self.initial["password"]
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_class = 'form-horizontal'
+        self.helper.label_class = 'col-lg-2'
+        self.helper.field_class = 'col-lg-8'
+        self.helper.add_input(Submit('submit', 'Submit'))

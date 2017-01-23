@@ -10,9 +10,16 @@
   </head>
   <body>
     <div class="container">
-      {% block main_content %}
+        {% for message in messages %}
+        <div class="row">
+            <div class="col alert alert-success" role="alert">
+                {{message}}
+            </div>
+        </div>
+        {% endfor %}
+        {% block main_content %}
 
-      {% endblock %}
+        {% endblock %}
     </div>
   </body>
   <script src="{% static 'jquery/dist/jquery.min.js' %}" > </script>
