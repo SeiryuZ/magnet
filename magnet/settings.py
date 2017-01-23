@@ -159,6 +159,13 @@ LOCALE_PATHS = [
 # Crispy form template pack
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+# Security settings
+if not DEBUG:
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+
 
 try:
     from .local_settings import *
