@@ -70,7 +70,7 @@ class ProfileView(BaseFormView):
         if form.is_valid():
             form.save()
             messages.success(request, _("Your profile has been updated"))
-            return redirect('profile')
+            return redirect('home')
         return render(request, self.template_name, {'form': form})
 
 
@@ -89,5 +89,13 @@ class ChangePasswordView(BaseFormView):
             form.save()
             update_session_auth_hash(request, form.user)
             messages.success(request, _("Your password has been updated"))
-            return redirect('profile')
+            return redirect('home')
         return render(request, self.template_name, {'form': form})
+
+
+@method_decorator(login_required, name='dispatch')
+class HomeView(View):
+    template_name = 'home.html'
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)

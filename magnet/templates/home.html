@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block main_content %}
+
+
+<div class="row center login-boxes">
+  <div class="col">
+      <a href="{% url 'profile' %}">{% trans "Change profile" %}</a><br/>
+      <a href="{% url 'change-password' %}">{% trans "Change password" %}</a>
+  </div>
+</div>
+
+
+
+{% endblock %}
