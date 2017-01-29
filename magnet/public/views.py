@@ -1,5 +1,5 @@
 from django.contrib import messages
-from django.contrib.auth import login, logout
+from django.contrib.auth import login, logout, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.utils.translation import ugettext_lazy as _
@@ -7,7 +7,7 @@ from django.views import View
 from django.shortcuts import render, redirect
 
 from magnet.apps.users.forms import UserCreationForm, UserChangeForm
-from .forms import LoginForm
+from .forms import LoginForm, PasswordChangeForm
 
 
 class BaseFormView(View):
@@ -70,5 +70,24 @@ class ProfileView(BaseFormView):
         if form.is_valid():
             form.save()
             messages.success(request, _("Your profile has been updated"))
+            return redirect('profile')
+        return render(request, self.template_name, {'form': form})
+
+
+@method_decorator(login_required, name='dispatch')
+class ChangePasswordView(BaseFormView):
+    form_class = PasswordChangeForm
+    template_name = 'form.html'
+
+    def get(self, request, *args, **kwargs):
+        form = self.form_class(user=request.user)
+        return render(request, self.template_name, {'form': form})
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(user=request.user, data=request.POST)
+        if form.is_valid():
+            form.save()
+            update_session_auth_hash(request, form.user)
+            messages.success(request, _("Your password has been updated"))
             return redirect('profile')
         return render(request, self.template_name, {'form': form})
