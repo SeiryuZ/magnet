@@ -45,7 +45,7 @@ class LoginView(BaseFormView):
             if next_:
                 return redirect(next_)
             else:
-                return redirect('profile')
+                return redirect('home')
         return render(request, self.template_name, {'form': form})
 
 
