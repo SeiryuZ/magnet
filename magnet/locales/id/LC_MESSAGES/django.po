@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-22 09:01+0000\n"
+"POT-Creation-Date: 2017-01-29 12:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,102 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: magnet/apps/initiatives/models.py:25
+msgid "Initiative name"
+msgstr "Nama Inisiatif"
+
+#: magnet/apps/initiatives/models.py:26
+msgid "Description"
+msgstr "Keterangan"
+
+#: magnet/apps/initiatives/models.py:28
+msgid "Predicted beneficiary count"
+msgstr "Perkiraan jumlah penerima manfaat inisiatif"
+
+#: magnet/apps/initiatives/models.py:30
+msgid "Location"
+msgstr "Lokasi"
+
+#: magnet/apps/initiatives/models.py:31
+msgid "Target"
+msgstr "Target inisiatif"
+
+#: magnet/apps/initiatives/models.py:32
+msgid "Institution / Organization / Government / Specific society group"
+msgstr "Institusi / Organisasi / Pemerintah / Kelompok masyarakat"
+
+#: magnet/apps/initiatives/models.py:33
+msgid "Start date"
+msgstr "Tanggal mulai"
+
+#: magnet/apps/initiatives/models.py:34
+msgid "End date"
+msgstr "Tanggal berakhir"
+
+#: magnet/apps/initiatives/models.py:36
+msgid "Contact person name"
+msgstr "Nama penanggung jawab"
+
+#: magnet/apps/initiatives/models.py:37
+msgid "Contact person mobile number"
+msgstr "Nomor telepon penanggung jawab"
+
+#: magnet/apps/initiatives/models.py:40
+msgid "Initiative type"
+msgstr ""
+
+#: magnet/apps/initiatives/models.py:42
+msgid "Energy"
+msgstr "Energi dan ESDM"
+
+#: magnet/apps/initiatives/models.py:43
+msgid "Maritime and Fisheries"
+msgstr "Kelautan dan perikanan"
+
+#: magnet/apps/initiatives/models.py:44
+msgid "Health"
+msgstr "Kedokteran dan kesehatan"
+
+#: magnet/apps/initiatives/models.py:45
+msgid "Defense"
+msgstr "Pertahanan dan keamanan"
+
+#: magnet/apps/initiatives/models.py:46
+msgid "Environment"
+msgstr "Lingkungan hidup dan kehutanan"
+
+#: magnet/apps/initiatives/models.py:47
+msgid "Social"
+msgstr "Sosial kemasyarakatan"
+
+#: magnet/apps/initiatives/models.py:48
+msgid "Education"
+msgstr "Pendidikan"
+
+#: magnet/apps/initiatives/models.py:49
+msgid "Technology"
+msgstr "Teknologi dan informasi"
+
+#: magnet/apps/initiatives/models.py:50
+msgid "Culture and language"
+msgstr "Budaya dan bahasa"
+
+#: magnet/apps/initiatives/models.py:51
+msgid "Economy"
+msgstr "Ekonomi"
+
+#: magnet/apps/initiatives/models.py:52
+msgid "Agriculture"
+msgstr "Pertanian"
+
+#: magnet/apps/initiatives/models.py:53
+msgid "Architecture and urban planning"
+msgstr "Arsitektur dan tata kota"
+
+#: magnet/apps/users/forms.py:14 magnet/apps/users/forms.py:47
+msgid "Copy number for whatsapp"
+msgstr "Gunakan nomor untuk whatsapp"
 
 #: magnet/apps/users/models.py:53
 msgid "Name"
@@ -66,27 +162,42 @@ msgstr ""
 
 #: magnet/apps/users/models.py:68
 msgid "Volunteer"
-msgstr ""
+msgstr "Relawan"
 
 #: magnet/apps/users/models.py:69
 msgid "Initiator"
-msgstr ""
+msgstr "Inisiator"
 
-#: magnet/public/forms.py:8
+#: magnet/public/forms.py:11
 msgid "Email or Mobile"
 msgstr "Email atau Telepon"
 
-#: magnet/public/forms.py:11
+#: magnet/public/forms.py:14
 msgid "Password"
 msgstr "Sandi"
 
-#: magnet/public/forms.py:15
+#: magnet/public/forms.py:18
 msgid "Wrong username or password."
 msgstr "Username atau password salah."
 
-#: magnet/public/forms.py:17
+#: magnet/public/forms.py:20
 msgid "This account is inactive. Please contact us for assistance."
 msgstr "Akun ini belum aktif. Hubungi kami untuk bantuan."
+
+#: magnet/public/views.py:28
+msgid ""
+"You have succcessfully registered. Please check your email for further "
+"instructions."
+msgstr ""
+"Anda telah berhasil mendaftar. Cek email anda untuk instruksi lebih lanjut"
+
+#: magnet/public/views.py:72
+msgid "Your profile has been updated"
+msgstr "Profil anda telah diubah"
+
+#: magnet/public/views.py:91
+msgid "Your password has been updated"
+msgstr "Password anda telah diubah"
 
 #: magnet/settings.py:122
 msgid "Indonesian"
@@ -95,3 +206,13 @@ msgstr "Bahasa Indonesia"
 #: magnet/settings.py:123
 msgid "English"
 msgstr "Bahasa Inggris"
+
+#: magnet/templates/home.html:9
+msgid "Change profile"
+msgstr "Ubah profil"
+
+#: magnet/templates/home.html:10
+#, fuzzy
+#| msgid "Password"
+msgid "Change password"
+msgstr "Sandi"
